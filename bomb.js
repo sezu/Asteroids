@@ -14,7 +14,6 @@
       if(game.asteroids[i].isCollidedWith(this)) {
         game.removeAsteroid(i);
         game.score += 1;
-        break;
       }
     }
 
