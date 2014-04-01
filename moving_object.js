@@ -31,7 +31,6 @@
     ctx.fill();
   }
 
-
   MovingObject.prototype.isCollidedWith = function(otherObj) {
     var x = Math.abs(this.pos[0] - otherObj.pos[0]);
     var y = Math.abs(this.pos[1] - otherObj.pos[1]);
