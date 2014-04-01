@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DA BEST ASTEROID GAME EVAAA</title>
+    <title>Asteroids</title>
     <script src="moving_object.js"></script>
     <script src="inherit.js"></script>
     <script src="asteroid.js"></script>
@@ -19,11 +19,14 @@
       var ctx = canvas.getContext("2d")
       var img = new Image();
       img.onload = function () {
-            ctx.drawImage(img, 0, 0);
-        }
-        img.src = 'space.jpg';
-        var asteroid = new Asteroids.Game(ctx);
-        asteroid.start();
+        ctx.drawImage(img, 0, 0);
+      }
+        
+      img.src = 'space.jpg';
+        
+      var game = new Asteroids.Game(ctx);
+      game.start();
+        
     </script>
 </body>
 </html>

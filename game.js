@@ -1,6 +1,5 @@
 (function(root) {
 
-
   var Asteroids = root.Asteroids = (root.Asteroids || {} );
 
   var Game = Asteroids.Game = function(ctx) {
@@ -12,7 +11,6 @@
     this.score = 0;
     this.wave = 20;
   }
-
 
   Game.prototype.addAsteroids = function(numAsteroids) {
     for(var i = 0; i < numAsteroids; i++) {
@@ -97,7 +95,8 @@
     for(var i = 0; i < this.asteroids.length; i++) {
       if(this.asteroids[i].isCollidedWith(this.ship)) {
         this.stop();
-        alert("You dun goofed");
+      	game = new Asteroids.Game(ctx);
+      	game.start();
       }
     }
   }
@@ -118,7 +117,12 @@
       x -= Game.SPEED;
     if(key.isPressed("d"))
       x += Game.SPEED;
-
+      
+    // if (key.isPressed(13)) {
+    //       this.stop()
+    //       game = new Asteroids.Game(ctx);
+    //       game.start();
+    //     }  
 
     this.ship.power([x,y])
 
@@ -152,10 +156,10 @@
     this.bullets.splice(idx, 1);
   }
 
-
   Game.prototype.drawScore = function() {
     text = "Score: " + this.score
-    ctx.font="20px Helvitica";
+    ctx.font = "20px Helvitica";
+    ctx.fillStyle = "white"
     this.ctx.fillText(text, 50, 50)
 
 
@@ -165,8 +169,5 @@
     text = "Wave: " + (this.wave / 20)
     this.ctx.fillText(text, 440, 50)
   }
-
-
-
 
 })(this);
